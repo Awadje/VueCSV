@@ -1,26 +1,26 @@
 <template>
   <v-app>
     <v-toolbar>
-     <v-toolbar-title>Select a CSV to Upload</v-toolbar-title>
+      <v-toolbar-title>Select a CSV to Upload</v-toolbar-title>
      </v-toolbar>
-    <v-responsive class="table-responsive">
-      <v-card v-if="error">
-              {{ parseError }}
-             <v-alert v-show="alert" outline color="error" icon="warning" :value="true" dismissible v-model="alert">
-              {{ error }}
-            </v-alert>
-      </v-card>
-      <v-container>
-        <v-flex>
-          <v-card>
-            <v-data-table
-            v-if="csvData"
-            :headers="headings"
-            :items="csvData"
-            hide-actions
-            class="elevation-1"
-            :pagination.sync="pagination"
-          >
+      <v-responsive class="table-responsive">
+        <v-card v-if="error">
+            {{ parseError }}
+          <v-alert v-show="alert" outline color="error" icon="warning" :value="true" dismissible v-model="alert">
+            {{ error }}
+          </v-alert>
+        </v-card>
+        <v-container>
+          <v-flex>
+            <v-card>
+              <v-data-table
+              v-if="csvData"
+              :headers="headings"
+              :items="csvData"
+              hide-actions
+              class="elevation-1"
+              :pagination.sync="pagination"
+            >
             <template slot="items" slot-scope="props">
               <td v-for="item in props.item" v-bind:key="item" class="text-xs-right">{{ item }}</td>
             </template>

@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-toolbar>
+    <v-toolbar dark color="primary">
       <v-toolbar-title>Select a CSV to Upload</v-toolbar-title>
 		</v-toolbar>
 		<v-responsive class="table-responsive">
@@ -110,7 +110,4 @@ import Papa from 'papaparse'
 .table-responsive {
   background-image: url("assets/bg.jpg");
 }
-  * {
-    color: #707070;
-  }
 </style>
